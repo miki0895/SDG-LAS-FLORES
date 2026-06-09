@@ -1,0 +1,1580 @@
+@charset "utf-8";
+/* FUENTE PERSONALIZADA */
+@font-face {
+    font-family: "BlondeScript";
+    src: url("fonts/blondescript-regular.otf") format("truetype");
+}
+
+/* RESET */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    font-family: 'Montserrat', Arial, sans-serif;
+}
+
+/* HEADER PREMIUM */
+/* HEADER EFECTO VIDRIO */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 0 40px;
+    height: 80px;
+
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+
+    background: linear-gradient(90deg, #f4b400, #B08200);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+
+    border-bottom: 1px solid rgba(255,255,255,0.15);
+    transition: all 0.4s ease;
+}
+
+/* TEXTO BLANCO POR DEFECTO */
+.right a,
+.school-name1,
+.school-name2 {
+    color: #fff;
+}
+
+/* HEADER AL HACER SCROLL */
+.header.scrolled {
+    background: rgba(255,255,255,0.85);
+    backdrop-filter: blur(12px);
+
+    box-shadow: 0 4px 30px rgba(0,0,0,0.1);
+    border-bottom: 1px solid rgba(0,0,0,0.05);
+}
+
+/* TEXTO NEGRO AL HACER SCROLL */
+.header.scrolled .right a,
+.header.scrolled .school-name1,
+.header.scrolled .school-name2 {
+    color: #000;
+}
+
+/* BOTÓN HAMBURGUESA */
+.menu-toggle {
+    display: none;
+    font-size: 1.8em;
+    color: white;
+    cursor: pointer;
+}
+
+/* MODO MOBILE */
+@media (max-width: 768px) {
+
+    .menu-toggle {
+        display: block;
+        position: absolute;
+        right: 20px;
+        top: 20px;
+        font-size: 1.8em;
+        color: white;
+        z-index: 2000;
+    }
+
+    .right {
+        position: absolute; /* 🔥 CLAVE */
+        top: 70px;
+        right: 10px;
+
+        background: linear-gradient(90deg, #f4b400, #B08200);
+
+        border-radius: 12px;
+        padding: 10px 0;
+
+        display: none; /* 🔥 oculto */
+        flex-direction: column;
+
+        width: auto;      /* 🔥 CLAVE */
+        height: auto;     /* 🔥 CLAVE */
+
+        min-width: 180px; /* tamaño mínimo elegante */
+
+        box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+    }
+
+    .right a {
+        display: block;
+        padding: 12px 20px;
+        color: white;
+        text-align: left;
+        white-space: nowrap; /* 🔥 evita que se rompa */
+    }
+
+    .right a:hover {
+        background: rgba(255,255,255,0.15);
+    }
+
+    .right.active {
+        display: flex;
+    }
+}
+
+
+
+/* OVERLAY DEL HERO (MENOS OSCURO PARA QUE SE NOTE EL VIDRIO) */
+.hero::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(120deg, rgba(0,0,0,0.7), rgba(0,0,0,0.3));
+}
+
+/* CONTENEDORES */
+.left, .right {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+/* LOGO */
+.left img {
+    height: 50px;
+}
+
+/* TEXTO */
+.school-name1 {
+    font-family: "Brush Script MT", cursive;
+    font-size: 2em;
+    color: #fff;
+}
+
+.school-name2 {
+    font-size: 1.2em;
+    font-weight: 600;
+    color: #fff;
+}
+
+/* MENÃš */
+.right a {
+    color: #fff;
+    text-decoration: none;
+    padding: 8px 14px;
+    position: relative;
+    overflow: hidden;
+}
+
+/* EFECTO PREMIUM */
+.right a::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(255,255,255,0.1);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: 0.3s;
+    z-index: -1;
+}
+
+.right a:hover::before {
+    transform: scaleX(1);
+}
+
+.right a::after {
+    content: "";
+    position: absolute;
+    width: 0%;
+    height: 2px;
+    background: #f4b400;
+    bottom: -5px;
+    left: 0;
+    transition: 0.3s;
+}
+
+.right a:hover::after {
+    width: 100%;
+}
+
+.right a:hover {
+    color: #FFFFFF;
+}
+
+.header.scrolled .right a {
+    color: #000;
+}
+
+
+
+
+
+
+/* ===================================
+   VIDEO PRINCIPAL YOUTUBE
+=================================== */
+.video-section{
+    width:100%;
+    aspect-ratio:16/9;
+    max-height:650px;
+    margin-top:80px;
+    overflow:hidden;
+}
+
+.video-section iframe{
+    width:100%;
+    height:100%;
+    border:none;
+    display:block;
+}
+
+
+
+
+/* ===================================
+   HISTORIA INSTITUCIONAL
+=================================== */
+
+.video-text{
+    width: 100%;
+    padding: 80px 20px;
+    background: #ffffff;
+    display: flex;
+    justify-content: center;
+}
+
+.video-text-content{
+    width: 100%;
+    max-width: 1100px;
+    text-align: justify;
+}
+
+.video-text-content h2{
+    text-align: center;
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #B08200;
+    margin-bottom: 30px;
+    position: relative;
+}
+
+.video-text-content h2::after{
+    content: "";
+    display: block;
+    width: 120px;
+    height: 4px;
+    background: linear-gradient(90deg,#f4b400,#B08200);
+    margin: 15px auto 0;
+    border-radius: 10px;
+}
+
+.video-text-content p{
+    font-size: 1.08rem;
+    line-height: 2;
+    color: #444;
+    text-align: justify;
+}
+
+/* TABLET */
+@media (max-width:1024px){
+
+    .video-text{
+        padding: 70px 30px;
+    }
+
+    .video-text-content h2{
+        font-size: 2.1rem;
+    }
+
+}
+
+/* CELULAR */
+@media (max-width:768px){
+
+    .video-text{
+        padding: 50px 20px;
+    }
+
+    .video-text-content{
+        max-width: 100%;
+    }
+
+    .video-text-content h2{
+        font-size: 1.8rem;
+        line-height: 1.3;
+    }
+
+    .video-text-content p{
+        font-size: 1rem;
+        line-height: 1.8;
+    }
+
+}
+
+/* CELULARES PEQUEÑOS */
+@media (max-width:480px){
+
+    .video-text{
+        padding: 40px 15px;
+    }
+
+    .video-text-content h2{
+        font-size: 1.5rem;
+    }
+
+    .video-text-content p{
+        font-size: 0.95rem;
+        line-height: 1.7;
+    }
+
+}
+
+
+/* ==========================
+   SECCIÓN DIRECTOR FUNDADOR
+========================== */
+
+.promo-section{
+    width: 100%;
+    background: linear-gradient(135deg, #d4a017, #f5d76e, #d4a017);
+    padding: clamp(40px, 6vw, 80px) 5%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: clamp(30px, 5vw, 80px);
+    flex-wrap: wrap;
+    box-sizing: border-box;
+}
+
+/* TEXTO */
+.promo-text{
+    flex: 1 1 500px;
+    max-width: 700px;
+}
+
+.promo-text h2{
+    font-size: clamp(1.8rem, 4vw, 2.8rem);
+    color: #7a4b00;
+    font-weight: 800;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+}
+
+.promo-text h2::after{
+    content: "";
+    display: block;
+    width: 90px;
+    height: 4px;
+    background: #7a4b00;
+    margin-top: 10px;
+    border-radius: 10px;
+}
+
+.promo-text p{
+    text-align: justify;
+    font-size: clamp(0.95rem, 1.5vw, 1.1rem);
+    line-height: 1.9;
+    color: #333;
+    margin-bottom: 25px;
+}
+
+/* BOTÓN */
+.btn-promo{
+    background: #7a4b00;
+    color: #fff;
+    border: none;
+    padding: 14px 35px;
+    border-radius: 50px;
+    font-size: clamp(0.9rem, 1.5vw, 1rem);
+    font-weight: 600;
+    cursor: pointer;
+    transition: .3s;
+}
+
+.btn-promo:hover{
+    background: #5f3900;
+    transform: translateY(-3px);
+}
+
+/* CONTENEDOR DE LA IMAGEN */
+.promo-image{
+    flex: 1 1 300px;
+    max-width: 450px;
+    text-align: center;
+}
+
+/* TARJETA EFECTO VIDRIO */
+.promo-image img{
+    width: 100%;
+    max-width: 350px;
+    height: auto;
+    display: block;
+    margin: auto;
+
+    padding: 15px;
+
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+
+    border: 1px solid rgba(255, 255, 255, 0.35);
+    border-radius: 25px;
+
+    box-shadow:
+        0 8px 32px rgba(0,0,0,0.15),
+        inset 0 1px 1px rgba(255,255,255,0.5);
+
+    transition: all .4s ease;
+}
+
+/* EFECTO AL PASAR EL CURSOR */
+.promo-image img:hover{
+    transform: translateY(-8px) scale(1.02);
+
+    box-shadow:
+        0 15px 40px rgba(0,0,0,0.25),
+        inset 0 1px 1px rgba(255,255,255,0.7);
+}
+
+/* NOMBRE */
+.promo-name{
+    margin-top: 25px;
+}
+
+.promo-name h3{
+    font-size: clamp(1.2rem, 2vw, 1.7rem);
+    color: #7a4b00;
+    margin-bottom: 5px;
+    font-weight: 700;
+}
+
+.promo-name span{
+    color: #444;
+    font-style: italic;
+}
+
+/* TABLETS */
+@media (max-width: 992px){
+
+    .promo-section{
+        flex-direction: column-reverse;
+        text-align: center;
+    }
+
+    .promo-text{
+        max-width: 100%;
+    }
+
+    .promo-text h2::after{
+        margin: 10px auto 0;
+    }
+}
+
+/* CELULARES */
+@media (max-width: 768px){
+
+    .promo-section{
+        padding: 40px 20px;
+        gap: 30px;
+    }
+
+    .promo-image img{
+        max-width: 280px;
+    }
+
+    .promo-text{
+        width: 100%;
+    }
+
+    .btn-promo{
+        width: 100%;
+        max-width: 300px;
+    }
+}
+
+/* CELULARES PEQUEÑOS */
+@media (max-width: 480px){
+
+    .promo-image img{
+        max-width: 220px;
+    }
+
+    .promo-text p{
+        line-height: 1.8;
+    }
+}
+
+
+
+/* ===================================
+   SECCIÓN VALORES INSTITUCIONALES
+=================================== */
+
+.valores{
+    padding: 80px 5%;
+    background: #fff;
+    overflow: hidden;
+}
+
+.valores-container{
+    max-width: 1400px;
+    margin: auto;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 60px;
+    flex-wrap: wrap;
+}
+
+/* ===================================
+   IMAGEN IZQUIERDA
+=================================== */
+
+.valores-media{
+    flex: 1 1 500px;
+    max-width: 650px;
+    position: relative;
+}
+
+.valores-media img{
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 25px;
+
+    box-shadow:
+    0 15px 40px rgba(0,0,0,.15);
+}
+
+/* ===================================
+   BOTONES SOBRE LA IMAGEN
+=================================== */
+
+.valores-tags{
+    position: absolute;
+    inset: 0;
+
+    display: flex;
+    flex-wrap: wrap;
+    align-content: center;
+    justify-content: center;
+    gap: 12px;
+
+    padding: 30px;
+}
+
+.valores-tags span{
+
+    padding: 12px 22px;
+
+    background: rgba(255,255,255,0.15);
+
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+
+    border: 1px solid rgba(255,255,255,0.35);
+
+    border-radius: 50px;
+
+    color: #FFFFFF;
+    font-weight: 600;
+    font-size: .95rem;
+    letter-spacing: .5px;
+
+    box-shadow:
+    0 8px 20px rgba(0,0,0,.15),
+    inset 0 1px 1px rgba(255,255,255,.4);
+
+    transition: .3s ease;
+}
+
+.valores-tags span:hover{
+
+    transform: translateY(-4px);
+
+    background: rgba(255,255,255,0.25);
+}
+
+/* ===================================
+   TEXTO DERECHA
+=================================== */
+
+.valores-text{
+    flex: 1 1 500px;
+    max-width: 650px;
+}
+
+.valores-text h2{
+    font-size: clamp(1.8rem, 4vw, 2.8rem);
+    color: #8a5a00;
+    margin-bottom: 25px;
+    font-weight: 800;
+    line-height: 1.2;
+
+    text-align: center;
+}
+
+.valores-text h2::after{
+    content: "";
+
+    display: block;
+
+    width: 100px;
+    height: 5px;
+
+    background: linear-gradient(
+        90deg,
+        #c99700,
+        #f5d76e,
+        #c99700
+    );
+
+    border-radius: 50px;
+
+    margin: 18px auto 0;
+}
+
+.valores-text p{
+
+    text-align: justify;
+
+    color: #444;
+
+    font-size: 1.05rem;
+
+    line-height: 2;
+}
+
+/* ===================================
+   TABLETS
+=================================== */
+
+@media (max-width: 992px){
+
+    .valores-container{
+
+        flex-direction: column;
+    }
+
+    .valores-text,
+    .valores-media{
+
+        max-width: 100%;
+    }
+
+    .valores-text{
+
+        text-align: center;
+    }
+
+    .valores-text h2::after{
+
+        margin: 15px auto 0;
+    }
+}
+
+/* ===================================
+   CELULARES
+=================================== */
+
+@media (max-width: 768px){
+
+    .valores{
+        padding: 60px 20px;
+    }
+
+    .valores-tags{
+
+        gap: 8px;
+        padding: 15px;
+    }
+
+    .valores-tags span{
+
+        font-size: .80rem;
+        padding: 8px 15px;
+    }
+
+    .valores-text p{
+
+        font-size: .95rem;
+        line-height: 1.8;
+    }
+}
+
+/* ===================================
+   CELULARES PEQUEÑOS
+=================================== */
+
+@media (max-width: 480px){
+
+    .valores-tags{
+
+        align-content: flex-start;
+        padding-top: 20px;
+    }
+
+    .valores-tags span{
+
+        font-size: .75rem;
+        padding: 7px 12px;
+    }
+}
+
+/* ===================================
+   MISIÓN Y VISIÓN
+=================================== */
+
+.mv-section{
+    width: 100%;
+    padding: 80px 5%;
+    background: #ffffff;
+}
+
+.mv-block{
+    max-width: 1400px;
+    margin: 0 auto 100px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 70px;
+}
+
+/* MISIÓN */
+.mv-block:first-child{
+    flex-direction: row;
+}
+
+/* VISIÓN */
+.mv-block:last-child{
+    flex-direction: row-reverse;
+}
+
+/* ===================================
+   IMÁGENES
+=================================== */
+
+.mv-img{
+    flex: 1;
+    min-width: 320px;
+}
+
+.mv-img img{
+    width: 100%;
+    display: block;
+
+    border-radius: 25px;
+
+    box-shadow:
+    0 15px 40px rgba(0,0,0,.12);
+
+    transition: .4s ease;
+}
+
+.mv-img img:hover{
+    transform: scale(1.02);
+}
+
+/* ===================================
+   TEXTO
+=================================== */
+
+.mv-text{
+    flex: 1;
+    min-width: 320px;
+}
+
+.mv-text h2{
+    text-align: center;
+
+    font-size: clamp(2rem,4vw,3rem);
+
+    color: #8a5a00;
+
+    font-weight: 800;
+
+    margin-bottom: 20px;
+
+    text-transform: uppercase;
+
+    letter-spacing: 1px;
+}
+
+/* Línea decorativa */
+.mv-text h2::after{
+
+    content: "";
+
+    display: block;
+
+    width: 90px;
+    height: 5px;
+
+    margin: 15px auto 0;
+
+    border-radius: 30px;
+
+    background: linear-gradient(
+        90deg,
+        #c99700,
+        #f5d76e,
+        #c99700
+    );
+}
+
+.mv-text p{
+
+    text-align: justify;
+
+    font-size: 1.05rem;
+
+    line-height: 2;
+
+    color: #444;
+}
+
+/* ===================================
+   EFECTO DIFERENCIADOR
+=================================== */
+
+.mv-block:nth-child(1){
+    padding-bottom: 70px;
+    border-bottom: 1px solid #ececec;
+}
+
+/* ===================================
+   TABLET
+=================================== */
+
+@media (max-width: 992px){
+
+    .mv-block,
+    .mv-block:first-child,
+    .mv-block:last-child{
+
+        flex-direction: column;
+    }
+
+    .mv-section{
+        padding: 70px 25px;
+    }
+
+    .mv-block{
+        gap: 40px;
+        margin-bottom: 80px;
+    }
+}
+
+/* ===================================
+   CELULAR
+=================================== */
+
+@media (max-width: 768px){
+
+    .mv-text p{
+
+        font-size: .95rem;
+
+        line-height: 1.8;
+    }
+
+    .mv-img img{
+
+        border-radius: 18px;
+    }
+
+    .mv-block{
+
+        margin-bottom: 60px;
+    }
+}
+
+/* ===================================
+   CELULARES PEQUEÑOS
+=================================== */
+
+@media (max-width: 480px){
+
+    .mv-section{
+        padding: 50px 20px;
+    }
+
+    .mv-text h2{
+        font-size: 1.8rem;
+    }
+
+    .mv-text p{
+        font-size: .92rem;
+    }
+}
+
+/* ===================================
+   PROCESO DE ADMISIÓN 2026
+=================================== */
+
+.admissions{
+    padding: 80px 5%;
+    background: #f7f7f7;
+    text-align: center;
+    overflow: hidden;
+}
+
+.section-title{
+    font-size: clamp(2rem, 4vw, 3.5rem);
+    color: #0b3565;
+    font-weight: 800;
+    margin-bottom: 10px;
+}
+
+.section-subtitle{
+    font-size: 1.1rem;
+    color: #666;
+    margin-bottom: 70px;
+}
+
+/* CONTENEDOR */
+
+.steps{
+    max-width: 1400px;
+    margin: auto;
+
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+
+    position: relative;
+}
+
+/* LÍNEA CONECTORA */
+
+.steps::before{
+    content: "";
+    position: absolute;
+    top: 20px;
+    left: 15%;
+    right: 15%;
+    height: 3px;
+    background: #f0b400;
+    z-index: 0;
+}
+
+/* ===================================
+   TARJETA
+=================================== */
+
+.step{
+    position: relative;
+
+    width: 280px;
+    min-height: 200px;
+
+    background: #fff;
+
+    border-radius: 18px;
+
+    padding: 65px 25px 30px;
+
+    box-shadow: 0 12px 30px rgba(0,0,0,.08);
+
+    transition: all .4s ease;
+
+    overflow: visible;
+
+    z-index: 1;
+}
+
+/* BRILLO */
+
+.step::before{
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+    left: -120%;
+
+    width: 60%;
+    height: 100%;
+
+    background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(255,255,255,.7),
+        transparent
+    );
+
+    transform: skewX(-25deg);
+
+    transition: .8s;
+}
+
+/* EFECTO HOVER */
+
+.step:hover{
+
+    transform: translateY(-12px);
+
+    box-shadow:
+        0 25px 50px rgba(0,0,0,.15);
+
+    border-bottom: 5px solid #f0b400;
+}
+
+.step:hover::before{
+    left: 150%;
+}
+
+/* ===================================
+   CÍRCULO NUMERADO
+=================================== */
+
+.step-number{
+
+    position: absolute;
+
+    top: -22px;
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    width: 46px;
+    height: 46px;
+
+    background: #f0b400;
+
+    color: #000;
+
+    border-radius: 50%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 1.2rem;
+    font-weight: 700;
+
+    box-shadow:
+        0 8px 20px rgba(240,180,0,.35);
+
+    z-index: 5;
+
+    transition: all .4s ease;
+}
+
+/* ANIMACIÓN DEL CÍRCULO */
+
+.step:hover .step-number{
+
+    transform: translateX(-50%) scale(1.18);
+
+    background: #0b3565;
+
+    color: #fff;
+
+    box-shadow:
+        0 12px 30px rgba(11,53,101,.35);
+}
+
+/* TÍTULO */
+
+.step h3{
+    color: #0b3565;
+    font-size: 1.6rem;
+    margin-bottom: 15px;
+    font-weight: 700;
+    transition: .3s ease;
+}
+
+.step:hover h3{
+    color: #f0b400;
+}
+
+/* ANIMACIÓN */
+
+@keyframes fadeUp{
+
+    from{
+        opacity: 0;
+        transform: translateY(40px);
+    }
+
+    to{
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* TABLET */
+
+@media (max-width: 992px){
+
+    .steps::before{
+        display: none;
+    }
+
+    .step{
+        width: calc(50% - 20px);
+        min-width: 280px;
+    }
+}
+
+/* CELULAR */
+
+@media (max-width: 768px){
+
+    .admissions{
+        padding: 60px 20px;
+    }
+
+    .section-subtitle{
+        margin-bottom: 50px;
+    }
+
+    .step{
+        width: 100%;
+        max-width: 400px;
+        margin: auto;
+    }
+}
+
+/* CELULARES PEQUEÑOS */
+
+@media (max-width: 480px){
+
+    .section-title{
+        font-size: 2rem;
+    }
+
+    .section-subtitle{
+        font-size: .95rem;
+    }
+
+    .step h3{
+        font-size: 1.4rem;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+/* NÚMERO */
+.step-number {
+    position: absolute;
+    top: -15px;
+    left: 50%;
+    transform: translateX(-50%);
+
+    background: #f4b400;
+    color: black;
+
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-weight: bold;
+}
+
+/* TEXTO */
+.step h3 {
+    margin-top: 20px;
+    color: #0a2a4a;
+}
+
+.step p {
+    margin-top: 10px;
+    font-size: 0.9em;
+    color: #666;
+}
+
+
+/* CONTACTO */
+.contact {
+    background: linear-gradient(135deg, #0a2a4a, #123b63);
+    color: white;
+    padding: 60px 20px;
+    text-align: center;
+}
+
+.contact input,
+.contact textarea {
+    width: 80%;
+    padding: 12px;
+    margin: 10px auto;
+    display: block;
+    border-radius: 8px;
+    border: none;
+}
+
+.contact input:focus,
+.contact textarea:focus {
+    outline: none;
+    box-shadow: 0 0 5px #f4b400;
+}
+
+.contact button {
+    background: #f4b400;
+    padding: 12px 25px;
+    border-radius: 25px;
+    border: none;
+    cursor: pointer;
+	transition: 0.3s;
+}
+
+.contact button:hover {
+    background: #ffd84d;
+}
+
+.contact input,
+.contact textarea {
+    font-family: inherit;
+}
+
+/* FOOTER */
+footer {
+    background: #000;
+    color: white;
+    padding: 20px;
+}
+
+/* ANIMACIÃ“N SCROLL */
+.fade-in {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: all 1s ease;
+}
+
+.fade-in.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+@media (max-width: 768px) {
+    .footer-container {
+    flex-direction: column;
+    }
+
+    .social {
+        justify-content: center;
+    }
+}
+
+@media (max-width: 768px) {
+
+    .info-left, .info-right, .info-center {
+        width: 100%;
+        text-align: center;
+        margin-bottom: 20px;
+    }
+
+    .split-section {
+        flex-direction: column;
+    }
+
+    .split-image,
+    .split-content {
+        width: 100%;
+    }
+}
+
+
+/* RESPONSIVE */
+@media (max-width: 768px){
+
+    .header{
+        height:70px;
+        padding:0 15px;
+        flex-direction:row;
+        justify-content:space-between;
+    }
+
+    .left{
+        flex-direction:row;
+    }
+
+}
+
+
+
+
+
+
+
+
+
+.footer {
+    background: linear-gradient(135deg, #000000, #2b2b2b); /* 🔥 negro degradado */
+	border-top: 3px solid #f4b400;
+    color: white;
+    padding-top: 50px;
+}
+
+/* CONTENEDOR */
+.footer-container {
+    display: flex;
+    justify-content: center; /* 🔥 CAMBIO CLAVE */
+    flex-wrap: wrap;
+    padding: 0 10%;
+    gap: 40px;
+    text-align: center; /* 🔥 centra textos */
+}
+
+/* COLUMNAS */
+.footer-col {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* 🔥 centra todo */
+}
+
+/* LOGO */
+.footer-logo {
+    width: 80px;
+    margin-bottom: 15px;
+}
+
+/* TITULOS */
+.footer h3 {
+    margin-bottom: 15px;
+    color: #f4b400;
+}
+
+/* LISTAS */
+.footer ul {
+    list-style: none;
+}
+
+.footer ul li {
+    margin-bottom: 8px;
+}
+
+.footer ul li a {
+    text-decoration: none;
+    color: #ddd;
+    transition: 0.3s;
+}
+
+.footer ul li a:hover {
+    color: #f4b400;
+}
+
+/* REDES */
+.social {
+    display: flex;
+    justify-content: center; /* 🔥 centra los iconos */
+    align-items: center;
+    gap: 12px;
+    margin-top: 10px;
+}
+
+.social a {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: rgba(255,255,255,0.1);
+    border-radius: 50%;
+
+    color: #fff; /* 🔥 blanco fijo */
+    font-size: 18px;
+
+    transition: 0.3s;
+}
+
+.social a:hover {
+    background: #f4b400;
+    color: #000; /* cambia a negro al pasar mouse */
+}
+
+.social a i {
+    color: #fff;
+}
+
+.lista {
+    list-style: none; /* viñetas */
+    padding-left: 20px;
+    text-align: left;
+    color: #ccc;
+    padding: 0;
+}
+
+.lista li {
+    margin-bottom: 8px;
+}
+
+.lista li {
+    position: relative;
+    padding-left: 25px;
+    margin-bottom: 10px;
+    color: #ddd;
+}
+
+/* VIÑETA PERSONALIZADA */
+.lista li::before {
+    content: "●";
+    position: absolute;
+    left: 0;
+    top: 0;
+    color: #f4b400; /* dorado institucional */
+    font-size: 14px;
+}
+
+
+/* TELÉFONO DESTACADO */
+.phone {
+    font-size: 1.3em;
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+/* PARTE FINAL */
+.footer-bottom {
+    text-align: center;
+    padding: 20px;
+    margin-top: 40px;
+
+    border-top: 1px solid rgba(255,255,255,0.08);
+    background: rgba(0,0,0,0.4); /* 🔥 efecto vidrio oscuro */
+    backdrop-filter: blur(5px);
+    font-size: 0.9em;
+}
+
+@media (max-width: 768px) {
+
+    .menu-toggle {
+        display: block;
+        position: absolute;
+        right: 20px;
+        top: 20px;
+        font-size: 1.8em;
+        color: white;
+        z-index: 2000;
+    }
+
+
+    .right {
+        position: absolute;
+        top: 80px; /* debajo del header */
+        right: 20px;
+
+        background: linear-gradient(90deg, #f4b400, #B08200); /* 🔥 mismo estilo */
+
+        border-radius: 10px;
+        padding: 10px 0;
+
+        display: none; /* 🔴 oculto por defecto */
+        flex-direction: column;
+
+        box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+    }
+
+    .right a {
+        display: block;
+        padding: 10px 20px;
+        color: white;
+        text-align: left;
+        width: 100%;
+    }
+
+    .right a:hover {
+        background: rgba(255,255,255,0.1);
+    }
+
+    /* CUANDO SE ACTIVA */
+    .right.active {
+        display: flex;
+    }
+}
+
+/* ===== MENU CON SUBMENU ===== */
+
+.menu-list {
+    list-style: none;
+    display: flex;
+    gap: 15px;
+}
+
+.menu-list li {
+    position: relative;
+}
+
+/* HEREDAR ESTILO A LINKS */
+.menu-list li a {
+    color: inherit;
+    text-decoration: none;
+    padding: 8px 14px;
+    display: block;
+}
+
+/* SUBMENU */
+.submenu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+
+    background: white;
+    list-style: none;
+
+    padding: 0;
+    margin: 0;
+
+    display: none;
+    min-width: 200px;
+
+    border-radius: 10px;
+    overflow: hidden;
+
+    box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+}
+
+/* ITEMS SUBMENU */
+.submenu li a {
+    color: #333;
+    padding: 12px 15px;
+}
+
+.submenu li a:hover {
+    background: #f4b400;
+    color: black;
+}
+
+/* MOSTRAR EN DESKTOP */
+.has-submenu:hover .submenu {
+    display: block;
+}
+
+@media (max-width: 768px) {
+
+    .menu-list {
+        flex-direction: column;
+    }
+
+    .submenu {
+        position: static;
+        background: rgba(255,255,255,0.1);
+        box-shadow: none;
+        display: none;
+    }
+
+    .submenu li a {
+        color: white;
+        padding-left: 30px;
+    }
+
+    .submenu.active {
+        display: block;
+    }
+}

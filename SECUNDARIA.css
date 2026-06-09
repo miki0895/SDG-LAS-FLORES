@@ -1,0 +1,1185 @@
+@charset "utf-8";
+
+/* FUENTE PERSONALIZADA */
+@font-face {
+    font-family: "BlondeScript";
+    src: url("fonts/blondescript-regular.otf") format("opentype");
+}
+
+/* RESET */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    font-family: 'Montserrat', Arial, sans-serif;
+}
+
+body {
+    line-height: 1.6;
+    color: #333;
+}
+
+/* ================= HEADER ================= */
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 40px;
+    height: 80px;
+
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+
+    background: linear-gradient(90deg, #f4b400, #B08200);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(255,255,255,0.15);
+    transition: all 0.4s ease;
+}
+
+.header.scrolled {
+    background: rgba(255,255,255,0.9);
+    box-shadow: 0 4px 30px rgba(0,0,0,0.1);
+}
+
+/* TEXTO */
+.school-name1,
+.school-name2,
+.right a {
+    color: #fff;
+}
+
+.header.scrolled .school-name1,
+.header.scrolled .school-name2,
+.header.scrolled .right a {
+    color: #000;
+}
+
+/* CONTENEDORES */
+.left, .right {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.left img {
+    height: 50px;
+}
+
+.school-name1 {
+    font-family: "Brush Script MT", cursive;
+    font-size: 2em;
+}
+
+.school-name2 {
+    font-size: 1.2em;
+    font-weight: 600;
+}
+
+/* MENÚ */
+.menu-list {
+    list-style: none;
+    display: flex;
+    gap: 15px;
+}
+
+.menu-list li {
+    position: relative;
+}
+
+.menu-list a {
+    text-decoration: none;
+    padding: 8px 14px;
+    display: block;
+    position: relative;
+}
+
+/* EFECTO HOVER */
+.menu-list a::after {
+    content: "";
+    position: absolute;
+    width: 0%;
+    height: 2px;
+    background: #f4b400;
+    bottom: -5px;
+    left: 0;
+    transition: 0.3s;
+}
+
+.menu-list a:hover::after {
+    width: 100%;
+}
+
+/* SUBMENU */
+.submenu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background: #fff;
+    display: none;
+    min-width: 200px;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+}
+
+.submenu li a {
+    color: #333;
+    padding: 12px 15px;
+}
+
+.submenu li a:hover {
+    background: #f4b400;
+    color: black;
+}
+
+.has-submenu:hover .submenu {
+    display: block;
+}
+
+
+
+
+/* =====================================================
+   HERO NIVEL SECUNDARIA - RESPONSIVE 100%
+===================================================== */
+
+.hero-secundaria{
+    width: 100%;
+    height: 500px;
+    background: url("imagenes/54.jpg") center center/cover no-repeat;
+    display: flex;
+    align-items: center;
+    padding: 0 8%;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero-secundaria::before{
+    content: "";
+    position: absolute;
+    inset: 0;
+
+    background: linear-gradient(
+        90deg,
+        rgba(0,0,0,.75) 0%,
+        rgba(0,0,0,.55) 35%,
+        rgba(0,0,0,.30) 65%,
+        rgba(0,0,0,.10) 100%
+    );
+
+    z-index: 1;
+}
+
+.overlay-card{
+    position: relative;
+    z-index: 2;
+
+    max-width: 450px;
+    width: 100%;
+
+    padding: 30px;
+
+    background: rgba(255,255,255,.25);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+
+    border: 1px solid rgba(255,255,255,.35);
+    border-radius: 18px;
+
+    box-shadow: 0 10px 30px rgba(0,0,0,.15);
+
+    transition: all .4s ease;
+}
+
+.overlay-card:hover{
+    transform: translateY(-5px);
+    background: rgba(255,255,255,.30);
+}
+
+.nivel{
+    display: block;
+    color: #FFFFFF;
+    font-size: .95rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+    margin-bottom: 12px;
+    text-transform: uppercase;
+}
+
+.overlay-card h1{
+    color: #FFC300;
+    font-size: clamp(1.8rem, 4vw, 3rem);
+    line-height: 1.2;
+    margin-bottom: 20px;
+    font-weight: 800;
+}
+
+.btn-conocer{
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 14px 30px;
+
+    background: #FFC300;
+    color: #000000;
+
+    text-decoration: none;
+    font-weight: 700;
+
+    border-radius: 8px;
+
+    transition: .3s ease;
+}
+
+.btn-conocer:hover{
+    background: #FF5252;
+    transform: translateY(-3px);
+}
+
+/* ==========================
+   TABLET
+========================== */
+
+@media (max-width: 992px){
+
+    .hero-secundaria{
+        height: 380px;
+        padding: 0 5%;
+    }
+
+    .overlay-card{
+        max-width: 400px;
+        padding: 25px;
+    }
+
+}
+
+/* ==========================
+   MÓVIL
+========================== */
+
+@media (max-width: 768px){
+
+    .hero-secundaria{
+        height: 320px;
+        justify-content: center;
+        padding: 20px;
+    }
+
+    .overlay-card{
+        max-width: 100%;
+        padding: 22px;
+        text-align: center;
+    }
+
+    .btn-conocer{
+        width: 100%;
+    }
+
+}
+
+/* ==========================
+   MÓVILES PEQUEÑOS
+========================== */
+
+@media (max-width: 480px){
+
+    .hero-secundaria{
+        height: 280px;
+        padding: 15px;
+    }
+
+    .overlay-card{
+        padding: 18px;
+        border-radius: 15px;
+    }
+
+    .nivel{
+        font-size: .8rem;
+        letter-spacing: 1px;
+    }
+
+    .btn-conocer{
+        padding: 12px 20px;
+        font-size: .9rem;
+    }
+
+}
+
+/* Desplazamiento suave */
+html{
+    scroll-behavior: smooth;
+}
+
+/* ==========================
+   SECCIÓN BENEFICIOS
+========================== */
+
+.benefits-section{
+    width:100%;
+    padding:80px 5%;
+    
+    background: linear-gradient(
+        135deg,
+        #000000,
+        #111111,
+        #1a1a1a,
+        #000000
+    );
+
+    color:white;
+}
+
+/* CONTENEDOR GENERAL */
+
+.benefits-container{
+    max-width:1400px;
+    margin:auto;
+
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:50px;
+}
+
+/* TARJETAS */
+
+.cards-area{
+    flex:2;
+
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:25px;
+}
+
+/* TARJETA */
+
+.benefit-card{
+
+    padding:35px 25px;
+
+    border:1px solid rgba(255,255,255,.08);
+
+    background:rgba(255,255,255,.03);
+
+    backdrop-filter:blur(5px);
+
+    border-radius:12px;
+
+    transition:.4s ease;
+}
+
+.benefit-card:hover{
+
+    transform:translateY(-8px);
+
+    border-color:#FFC107;
+
+    box-shadow:0 0 25px rgba(255,193,7,.25);
+}
+
+/* ICONOS */
+
+.benefit-card i{
+
+    font-size:42px;
+
+    color:#FFC107;
+
+    margin-bottom:20px;
+}
+
+/* TÍTULOS */
+
+.benefit-card h3{
+
+    font-size:22px;
+
+    margin-bottom:10px;
+
+    color:white;
+}
+
+/* TEXTO */
+
+.benefit-card p{
+
+    color:#d0d0d0;
+
+    line-height:1.6;
+}
+
+/* CONTENIDO DERECHO */
+
+.content-area{
+
+    flex:1;
+}
+
+/* SUBTÍTULO */
+
+.subtitle{
+
+    display:block;
+
+    color:#FFC107;
+
+    text-transform:uppercase;
+
+    letter-spacing:3px;
+
+    margin-bottom:15px;
+
+    font-weight:600;
+}
+
+/* TÍTULO */
+
+.content-area h2{
+
+    font-size:48px;
+
+    line-height:1.2;
+
+    margin-bottom:30px;
+}
+
+/* BOTÓN */
+
+.btn-more{
+
+    display:inline-block;
+
+    padding:16px 35px;
+
+    background:#FFC107;
+
+    color:#000;
+
+    font-weight:700;
+
+    text-decoration:none;
+
+    border-radius:8px;
+
+    transition:.3s;
+}
+
+.btn-more:hover{
+
+    background:white;
+
+    transform:translateY(-3px);
+}
+
+/* TABLETS */
+
+@media(max-width:992px){
+
+    .benefits-container{
+
+        flex-direction:column;
+    }
+
+    .cards-area{
+
+        grid-template-columns:repeat(2,1fr);
+        width:100%;
+    }
+
+    .content-area{
+
+        text-align:center;
+    }
+
+    .content-area h2{
+
+        font-size:38px;
+    }
+}
+
+
+/* MÓVILES */
+
+@media(max-width:576px){
+
+    .cards-area{
+
+        grid-template-columns:1fr;
+    }
+
+    .content-area h2{
+
+        font-size:30px;
+    }
+
+    .benefits-section{
+
+        padding:60px 20px;
+    }
+}
+
+/* ==========================
+   SECCIÓN INSTITUCIONAL
+========================== */
+
+.institutional-content{
+    width:100%;
+    background:#ffffff;
+}
+
+.content-container{
+    display:flex;
+    width:100%;
+    min-height:700px;
+}
+
+/* ==========================
+   TEXTO IZQUIERDO
+========================== */
+
+.content-text{
+    width:50%;
+    padding:80px;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    box-sizing:border-box;
+}
+
+.section-label{
+    color:#FFC107;
+    font-size:14px;
+    font-weight:700;
+    letter-spacing:3px;
+    text-transform:uppercase;
+    margin-bottom:15px;
+}
+
+.content-text h2{
+    color:#FFC107;
+    font-size:48px;
+    line-height:1.2;
+    margin-bottom:25px;
+}
+
+.content-text p{
+    text-align:justify;
+    font-size:17px;
+    line-height:1.9;
+    color:#444;
+    margin-bottom:20px;
+}
+
+.benefits-list{
+    list-style:none;
+    padding:0;
+    margin-top:15px;
+}
+
+.benefits-list li{
+    position:relative;
+    padding-left:30px;
+    margin-bottom:15px;
+    text-align:justify;
+    line-height:1.7;
+}
+
+.benefits-list li::before{
+    content:"✓";
+    position:absolute;
+    left:0;
+    color:#FFC107;
+    font-weight:bold;
+}
+
+/* ==========================
+   IMAGEN DERECHA
+========================== */
+
+.content-image{
+    width:50%;
+    height:850px;
+    overflow:hidden;
+}
+
+.content-image img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    display:block;
+}
+/* ==========================
+   RESPONSIVE TABLET
+========================== */
+
+@media (max-width:992px){
+
+    .content-container{
+        flex-direction:column;
+    }
+
+    .content-text{
+        width:100%;
+        padding:60px;
+    }
+
+    .content-image{
+        width:100%;
+        height:500px;
+    }
+
+    .content-text h2{
+        font-size:38px;
+    }
+}
+
+/* ==========================
+   RESPONSIVE MÓVIL
+========================== */
+
+@media (max-width:576px){
+
+    .content-text{
+        padding:40px 25px;
+    }
+
+    .section-label{
+        text-align:center;
+        display:block;
+    }
+
+    .content-text h2{
+        font-size:30px;
+        text-align:center;
+    }
+
+    .content-text p{
+        text-align:justify;
+        font-size:16px;
+    }
+
+    .content-image{
+        height:320px;
+    }
+}
+
+/* ==========================
+   GALERÍA DE VIDEOS
+========================== */
+
+.student-videos{
+
+    width:100%;
+
+    padding:90px 5%;
+
+    background:#f8f8f8;
+}
+
+/* TÍTULO */
+
+.section-header{
+
+    text-align:center;
+
+    max-width:900px;
+
+    margin:0 auto 60px;
+}
+
+.section-header span{
+
+    color:#FFC107;
+
+    font-weight:700;
+
+    letter-spacing:3px;
+
+    text-transform:uppercase;
+
+    display:block;
+
+    margin-bottom:15px;
+}
+
+.section-header h2{
+
+    color:#FFC107;
+
+    font-size:48px;
+
+    margin-bottom:20px;
+}
+
+.section-header p{
+
+    color:#555;
+
+    font-size:17px;
+
+    line-height:1.8;
+}
+
+/* CONTENEDOR */
+
+.videos-container{
+
+    display:grid;
+
+    grid-template-columns:repeat(4,1fr);
+
+    gap:30px;
+
+    max-width:1400px;
+
+    margin:auto;
+}
+
+/* TARJETAS */
+
+.video-card{
+    width:100%;
+    max-width:320px;
+    margin:auto;
+    overflow:hidden;
+    border-radius:20px;
+}
+
+.video-card iframe{
+    width:100%;
+    height:570px;
+    border:none;
+    display:block;
+}
+
+.video-card:hover{
+
+    transform:translateY(-10px);
+}
+
+/* VIDEO VERTICAL */
+
+.video-card video{
+
+    width:100%;
+
+    aspect-ratio:9/16;
+
+    object-fit:cover;
+
+    display:block;
+}
+
+/* TABLET */
+
+@media(max-width:992px){
+
+    .videos-container{
+
+        grid-template-columns:repeat(2,1fr);
+    }
+
+    .section-header h2{
+
+        font-size:38px;
+    }
+}
+
+/* CELULAR */
+
+@media(max-width:576px){
+
+    .videos-container{
+
+        grid-template-columns:1fr;
+    }
+
+    .section-header h2{
+
+        font-size:30px;
+    }
+
+    .student-videos{
+
+        padding:60px 20px;
+    }
+}	
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ================= FOOTER ================= */
+
+.footer {
+    background: linear-gradient(135deg, #000, #2b2b2b);
+    border-top: 3px solid #f4b400;
+    color: white;
+    padding-top: 50px;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 40px;
+    padding: 0 10%;
+    text-align: center;
+}
+
+.footer-col {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.footer-logo {
+    width: 80px;
+    margin-bottom: 15px;
+}
+
+.footer h3 {
+    color: #f4b400;
+    margin-bottom: 15px;
+}
+
+.footer ul {
+    list-style: none;
+}
+
+.footer ul li {
+    margin-bottom: 8px;
+}
+
+.footer ul li a {
+    color: #ddd;
+    text-decoration: none;
+}
+
+.footer ul li a:hover {
+    color: #f4b400;
+}
+
+/* REDES */
+.social {
+    display: flex;
+    gap: 12px;
+    margin-top: 10px;
+}
+
+.social a {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(255,255,255,0.1);
+    border-radius: 50%;
+    color: #fff;
+}
+
+.social a:hover {
+    background: #f4b400;
+    color: #000;
+}
+
+/* FOOTER FINAL */
+.footer-bottom {
+    text-align: center;
+    padding: 20px;
+    margin-top: 40px;
+    background: rgba(0,0,0,0.4);
+    font-size: 0.9em;
+}
+
+/* ================= RESPONSIVE ================= */
+
+@media (max-width: 768px) {
+
+    
+    .bloque {
+        flex-direction: column;
+    }
+
+    .bloque-img,
+    .bloque-texto {
+        width: 100%;
+    }
+
+    .bloque-img img {
+        height: 220px;
+        object-fit: cover;
+    }
+
+    .linea {
+        width: 95%;
+        height: 3px;
+    }
+}
+
+/* ===== GALERIA PROFESIONAL ===== */
+
+/* ===== GALERIA ===== */
+
+.galeria {
+    padding: 80px 10%;
+    background: #ffffff;
+    text-align: center;
+}
+
+/* ===== VIDEOS ===== */
+
+/* CONTENEDOR VIDEOS */
+.videos-container {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+    margin-bottom: 50px;
+}
+
+/* VIDEO */
+.video-item {
+    width: 100%;
+    max-width: 480px; /* 🔥 controla tamaño real */
+}
+
+.video-item iframe {
+    width: 100%;
+    height: 270px; /* 🔥 altura fija correcta (16:9) */
+    border-radius: 12px;
+}
+
+/* ===== IMAGENES ===== */
+
+.imagenes-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+}
+
+.img-item {
+    overflow: hidden;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+}
+
+.img-item img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    transition: 0.4s ease;
+}
+
+.img-item img:hover {
+    transform: scale(1.05);
+}
+
+/* ===== RESPONSIVE ===== */
+
+@media (max-width: 768px) {
+
+    .videos-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .imagenes-container {
+        grid-template-columns: 1fr;
+    }
+}
+
+
+/* =================================== */
+/* ===== CAMBIOS SECUNDARIA HTML ===== */
+/* =================================== */
+
+:root {
+    --amarillo-1: #ffd000;
+    --amarillo-2: #ff9900;
+    --negro-1: #0f0f0f;
+    --negro-2: #1f1f1f;
+}
+
+/* EJEMPLO REAL FUNCIONANDO */
+.servicios {
+    background: linear-gradient(135deg, var(--amarillo-1), var(--amarillo-2));
+}
+	
+.banner {
+    background: linear-gradient(135deg, var(--negro-1), var(--negro-2));
+}
+
+/* ===================================== */
+/* ===== ENCABEZADO MOBILE CORREGIDO === */
+/* ===================================== */
+
+.menu-toggle{
+    display:none;
+}
+
+/* ===== DESKTOP ===== */
+
+@media (min-width:769px){
+
+    .right{
+        display:flex !important;
+        position:static;
+        background:none;
+        width:auto;
+        height:auto;
+        padding:0;
+        box-shadow:none;
+    }
+
+    .submenu{
+        position:absolute;
+    }
+}
+
+/* ===== MOBILE ===== */
+
+@media (max-width:768px){
+
+    /* HEADER */
+    .header{
+        display:flex;
+        flex-direction:row;
+        justify-content:space-between;
+        align-items:center;
+
+        height:70px;
+        padding:0 20px;
+    }
+
+    /* LOGO */
+    .left{
+        display:flex;
+        align-items:center;
+        gap:10px;
+    }
+
+    .left img{
+        height:35px;
+    }
+
+    /* OCULTAR TEXTOS */
+    .school-name1,
+    .school-name2{
+        display:none;
+    }
+
+    /* BOTON HAMBURGUESA */
+    .menu-toggle{
+        display:block;
+        background:none;
+        border:none;
+
+        font-size:30px;
+        color:white;
+
+        cursor:pointer;
+        z-index:3000;
+    }
+
+    .header.scrolled .menu-toggle{
+        color:black;
+    }
+
+    /* MENU */
+    .right{
+        position:absolute;
+
+        top:70px;
+        right:20px;
+
+        width:230px;
+
+        background:linear-gradient(180deg,#f4b400,#B08200);
+
+        border-radius:15px;
+
+        padding:20px 0;
+
+        display:none;
+
+        flex-direction:column;
+        align-items:center;
+
+        box-shadow:0 10px 25px rgba(0,0,0,0.25);
+
+        z-index:2500;
+    }
+
+    /* MENU ACTIVO */
+    .right.active{
+        display:flex;
+    }
+
+    /* LISTA */
+    .menu-list{
+        display:flex;
+        flex-direction:column;
+
+        width:100%;
+
+        gap:10px;
+    }
+
+    .menu-list li{
+        width:100%;
+        text-align:center;
+    }
+
+    .menu-list a{
+        width:100%;
+        padding:12px;
+        color:white;
+    }
+
+    /* SUBMENU */
+    .submenu{
+        position:static;
+
+        width:100%;
+
+        display:none;
+
+        background:rgba(255,255,255,0.1);
+
+        border-radius:0;
+        box-shadow:none;
+    }
+
+    .submenu.active{
+        display:block;
+    }
+
+    .submenu li a{
+        color:white;
+        padding-left:20px;
+    }
+
+    /* DESACTIVAR HOVER MOBILE */
+    .has-submenu:hover .submenu{
+        display:none;
+    }
+}
+

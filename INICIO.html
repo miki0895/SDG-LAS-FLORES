@@ -1,0 +1,106 @@
+	<!DOCTYPE html>
+	<html lang="es">
+	<head>
+		<meta charset="UTF-8">
+		<title>Colegio Moderno</title>
+		<link rel="stylesheet" href="styles.css">
+		<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+	</head>
+	<body>
+
+	<header class="header">
+
+		<div class="left">
+			<img src="logos/Insignia.png" alt="Logo institucional" width="55" height="50">
+			<span class="school-name1">Colegio</span>
+			<span class="school-name2">SANTO DOMINGO DE GUZMÁN</span>
+		</div>
+
+		 <nav class="right">
+			<a href="#">Inicio</a>
+			<a href="#">Admisiones</a>
+			<a href="#">Niveles</a>
+			<a href="#">Contacto</a>
+		</nav>
+	</header>
+
+	<section class="hero">
+		<H1>"Nacimos para ser los mejores"</H1>
+	  <p>Educación internacional con valores</p>
+<button>Conócenos</button>
+	</section>
+
+	<section class="about">
+	  <h2>Bienvenidos</h2>
+		<p>
+			El Colegio Santo Domingo de Guzmán en San Juan de Lurigancho (Las Flores) es una institución educativa destacada en la zona por su formación integral, con más de 35 años de experiencia. Se enfoca en la excelencia académica, la disciplina positiva, la tecnología y valores, incluyendo certificaciones internacionales de Microsoft. 
+		</p>
+	</section>
+
+	<section class="cards">
+		<div class="card">
+			<img src="imagenes/2.jpg" alt="Logo institucional" width="380" height="450">
+			<h3>NIVEL INICIAL</h3>
+			<p>Aprendizaje basado en el juego y la exploración.</p>
+		</div>
+		<div class="card">
+			<img src="imagenes/6.jpg" alt="Logo institucional" width="380" height="450">
+			<h3>PRIMARIA</h3>
+			<p>Desarrollo académico y habilidades sociales.</p>
+		</div>
+		<div class="card">
+			<img src="imagenes/7.jpg" alt="Logo institucional" width="380" height="450">
+			<h3>SECUNDARIA</h3>
+			<p>Preparación para retos académicos globales.</p>
+		</div>
+	</section>
+
+	<section class="features">
+		<h2>¿Por qué elegirnos?</h2>
+		<ul>
+			<li>Programas internacionales</li>
+			<li>Infraestructura moderna</li>
+			<li>Actividades extracurriculares</li>
+			<li>Enfoque en valores</li>
+		</ul>
+	</section>
+
+	<section class="admissions">
+		<h2>Proceso de Admisión</h2>
+		<div class="steps">
+			<div>Paso 1: Registro</div>
+			<div>Paso 2: Envío de documentos</div>
+			<div>Paso 3: Entrevista</div>
+			<div>Paso 4: Resultado</div>
+		</div>
+	</section>
+
+	<section class="contact">
+		<h2>Contacto</h2>
+		<form>
+			<input type="text" placeholder="Nombre">
+			<input type="email" placeholder="Email">
+			<input type="text" placeholder="Teléfono">
+			<textarea placeholder="Mensaje"></textarea>
+			<button>Enviar</button>
+		</form>
+	</section>
+
+
+	<footer>
+		<p>© 2026 Colegio Moderno</p>
+	</footer>
+
+	<script>
+	window.addEventListener("scroll", function() {
+		const header = document.querySelector(".header");
+
+		if (window.scrollY > 50) {
+			header.classList.add("scrolled");
+		} else {
+			header.classList.remove("scrolled");
+		}
+	});
+	</script>
+	</body>
+	</html>
