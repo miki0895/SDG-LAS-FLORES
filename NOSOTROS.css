@@ -81,11 +81,11 @@ html {
         top: 20px;
         font-size: 1.8em;
         color: white;
-        z-index: 2000;
+        z-index: 4000;
     }
 
-    .right {
-        position: absolute; /* 🔥 CLAVE */
+    nav.right {
+        position: absolute;
         top: 70px;
         right: 10px;
 
@@ -94,31 +94,39 @@ html {
         border-radius: 12px;
         padding: 10px 0;
 
-        display: none; /* 🔥 oculto */
+        display: none;
+
         flex-direction: column;
 
-        width: auto;      /* 🔥 CLAVE */
-        height: auto;     /* 🔥 CLAVE */
+        width: auto;
+        height: auto;
 
-        min-width: 180px; /* tamaño mínimo elegante */
+        min-width: 220px;
+
+        z-index: 3000;
 
         box-shadow: 0 10px 25px rgba(0,0,0,0.2);
     }
 
-    .right a {
+    nav.right a {
         display: block;
         padding: 12px 20px;
         color: white;
         text-align: left;
-        white-space: nowrap; /* 🔥 evita que se rompa */
+        white-space: nowrap;
     }
 
-    .right a:hover {
+    nav.right a:hover {
         background: rgba(255,255,255,0.15);
     }
 
-    .right.active {
+    nav.right.active {
         display: flex;
+    }
+
+    .school-name1,
+    .school-name2{
+        display:none;
     }
 }
 
@@ -1304,6 +1312,15 @@ footer {
         flex-direction:row;
     }
 
+    .left img{
+        height:40px;
+    }
+
+    .school-name1,
+    .school-name2{
+        display:none;
+    }
+
 }
 
 
@@ -1452,52 +1469,6 @@ footer {
     font-size: 0.9em;
 }
 
-@media (max-width: 768px) {
-
-    .menu-toggle {
-        display: block;
-        position: absolute;
-        right: 20px;
-        top: 20px;
-        font-size: 1.8em;
-        color: white;
-        z-index: 2000;
-    }
-
-
-    .right {
-        position: absolute;
-        top: 80px; /* debajo del header */
-        right: 20px;
-
-        background: linear-gradient(90deg, #f4b400, #B08200); /* 🔥 mismo estilo */
-
-        border-radius: 10px;
-        padding: 10px 0;
-
-        display: none; /* 🔴 oculto por defecto */
-        flex-direction: column;
-
-        box-shadow: 0 10px 25px rgba(0,0,0,0.2);
-    }
-
-    .right a {
-        display: block;
-        padding: 10px 20px;
-        color: white;
-        text-align: left;
-        width: 100%;
-    }
-
-    .right a:hover {
-        background: rgba(255,255,255,0.1);
-    }
-
-    /* CUANDO SE ACTIVA */
-    .right.active {
-        display: flex;
-    }
-}
 
 /* ===== MENU CON SUBMENU ===== */
 
@@ -1524,7 +1495,7 @@ footer {
     position: absolute;
     top: 100%;
     left: 0;
-
+	width:100%;
     background: white;
     list-style: none;
 
@@ -1572,9 +1543,15 @@ footer {
     .submenu li a {
         color: white;
         padding-left: 30px;
+		width:100%;
     }
 
     .submenu.active {
         display: block;
     }
+}
+
+.menu-toggle{
+    background:none;
+    border:none;
 }
