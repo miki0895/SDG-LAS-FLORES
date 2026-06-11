@@ -12,6 +12,8 @@ PERFIL DEL ESTUDIANTE DEL NIVEL SECUNDARIA<!DOCTYPE html>
 </head>
 <body>
 
+	
+	
 <header class="header">
 
     <div class="left">
@@ -20,6 +22,10 @@ PERFIL DEL ESTUDIANTE DEL NIVEL SECUNDARIA<!DOCTYPE html>
         <span class="school-name2">SANTO DOMINGO DE GUZMÁN</span>
     </div>
 
+	<button class="menu-toggle" id="menu-toggle">
+    <i class="fas fa-bars"></i>
+    </button>
+	
     <nav class="right" id="menu">
     <ul class="menu-list">
         <li><a href="index.html">Inicio</a></li>
@@ -221,24 +227,30 @@ PERFIL DEL ESTUDIANTE DEL NIVEL SECUNDARIA<!DOCTYPE html>
 
         <!-- LOGO + REDES -->
         <div class="footer-col">
-            <img src="logos/blanco.png" class="footer-logo" alt="SDG">
-
-            <p>Síguenos en:</p>
-            <div class="social">
-            <a href="#"><i class="fab fa-facebook-f"></i></a>
-            <a href="#"><i class="fab fa-youtube"></i></a>
-            <a href="#"><i class="fab fa-tiktok"></i></a>
-            </div>
-        </div>
+			<img src="logos/blanco.png" class="footer-logo" alt="SDG">
+			<p>Síguenos en:</p>
+			<div class="social">
+				<a href="#" onclick="window.open('https://www.facebook.com/colegiosdg?locale=es_LA', '_blank'); return false;">
+					<i class="fab fa-facebook-f"></i>
+				</a>
+				
+				<a href="#" onclick="window.open('https://www.youtube.com/@colegiosdglasflores', '_blank'); return false;">
+					<i class="fab fa-youtube"></i>
+				</a>
+				
+				<a href="#" onclick="window.open('https://www.tiktok.com/@sdglasflores_oficial?is_from_webapp=1&sender_device=pc', '_blank'); return false;">        <i class="fab fa-tiktok"></i>
+				</a>
+    </div>
+</div>
 
         <!-- NOSOTROS -->
         <div class="footer-col">
             <h3>Nosotros</h3>
             <ul>
-                <li><a href="#">Historia</a></li>
-                <li><a href="#">Misión y Visión</a></li>
-                <li><a href="#">Valores</a></li>
-                <li><a href="#">Perfil del Estudiante</a></li>
+                <li><a href="NOSOTROS.html">Historia</a></li>
+                <li><a href="NOSOTROS.html">Misión y Visión</a></li>
+                <li><a href="NOSOTROS.html">Valores</a></li>
+                <li><a href="PLATAFORMAS.html">Plataformas</a></li>
             </ul>
         </div>
 
@@ -249,7 +261,7 @@ PERFIL DEL ESTUDIANTE DEL NIVEL SECUNDARIA<!DOCTYPE html>
                 <li><a href="INICIAL.html">Nivel Inicial</a></li>
                 <li><a href="PRIMARIA.html">Nivel Primaria</a></li>
                 <li><a href="SECUNDARIA.html">Nivel Secundaria</a></li>
-                <li><a href="#">Talleres</a></li>
+                
             </ul>
         </div>
 
@@ -330,35 +342,35 @@ document.querySelectorAll(".has-submenu > a").forEach(link => {
     });
 });
 </script>
-	
-	
+
 	
 <script>
-document.querySelectorAll(".btn-toggle").forEach(btn => {
-    btn.addEventListener("click", () => {
-        const card = btn.parentElement;
-        card.classList.toggle("active");
+document.addEventListener("DOMContentLoaded", function() {
 
-        btn.textContent = card.classList.contains("active") 
-            ? "Ocultar contenido" 
-            : "Ver contenido";
-    });
-});
-</script>	
-	
-	<script>
-document.querySelectorAll(".btn-toggle").forEach(btn => {
-    btn.addEventListener("click", () => {
-        const bloque = btn.closest(".bloque");
-        bloque.classList.toggle("active");
+    const menuToggle = document.getElementById("menu-toggle");
+    const menu = document.getElementById("menu");
 
-        btn.textContent = bloque.classList.contains("active")
-            ? "Ver menos"
-            : "Ver más";
+    menuToggle.addEventListener("click", function() {
+        menu.classList.toggle("active");
     });
+
+    const submenuBtn = document.querySelector(".has-submenu > a");
+    const submenu = document.querySelector(".submenu");
+
+    submenuBtn.addEventListener("click", function(e) {
+        e.preventDefault();
+
+        if (submenu.style.display === "block") {
+            submenu.style.display = "none";
+        } else {
+            submenu.style.display = "block";
+        }
+    });
+
 });
-</script>	
-	
+</script>
+
+
 	
 </body>
 </html>
