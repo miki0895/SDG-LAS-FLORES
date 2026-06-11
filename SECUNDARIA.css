@@ -1177,9 +1177,24 @@ html{
         padding-left:20px;
     }
 
-    /* DESACTIVAR HOVER MOBILE */
-    .has-submenu:hover .submenu{
-        display:none;
-    }
+    /* DESACTIVAR HOVER SOLO SI NO ESTÁ ACTIVO */
+.has-submenu:hover .submenu:not(.active){
+    display:none;
+}
+	
 }
 
+
+@media (max-width:768px){
+
+    .submenu{
+        display:none;
+    }
+
+    .submenu.active{
+        display:block !important;
+        background:rgba(255,255,255,0.1);
+		opacity:1 !important;
+    }
+
+}
