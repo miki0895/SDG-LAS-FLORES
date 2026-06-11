@@ -433,25 +433,6 @@ body {
 }
 
 
-/* =================================== */
-/* ===== CAMBIOS SECUNDARIA HTML ===== */
-/* =================================== */
-
-:root {
-    --amarillo-1: #ffd000;
-    --amarillo-2: #ff9900;
-    --negro-1: #0f0f0f;
-    --negro-2: #1f1f1f;
-}
-
-/* EJEMPLO REAL FUNCIONANDO */
-.servicios {
-    background: linear-gradient(135deg, var(--amarillo-1), var(--amarillo-2));
-}
-	
-.banner {
-    background: linear-gradient(135deg, var(--negro-1), var(--negro-2));
-}
 
 /* ===================================== */
 /* ===== ENCABEZADO MOBILE CORREGIDO === */
@@ -462,7 +443,6 @@ body {
 }
 
 /* ===== DESKTOP ===== */
-
 @media (min-width:769px){
 
     .right{
@@ -480,10 +460,25 @@ body {
     }
 }
 
+
+
 /* ===== MOBILE ===== */
 
-@media (max-width:768px){
 
+@media (max-width:768px){
+.has-submenu > a{
+    cursor:pointer;
+}
+
+.submenu{
+    display:none !important;
+}
+
+.submenu.active{
+    display:block !important;
+}
+	
+	
     /* HEADER */
     .header{
         display:flex;
@@ -514,16 +509,16 @@ body {
 
     /* BOTON HAMBURGUESA */
     .menu-toggle{
-        display:block;
-        background:none;
-        border:none;
+    display:block;
+    background:none;
+    border:none;
+    font-size:30px;
+    color:white;
+    cursor:pointer;
 
-        font-size:30px;
-        color:white;
-
-        cursor:pointer;
-        z-index:3000;
-    }
+    position:relative;
+    z-index:10000;
+}
 
     .header.scrolled .menu-toggle{
         color:black;
@@ -531,12 +526,14 @@ body {
 
     /* MENU */
     .right{
-        position:absolute;
+    position:fixed;
 
-        top:70px;
-        right:20px;
+         top:70px;
+         right:15px;
 
-        width:230px;
+         width:250px;
+
+         z-index:10000;
 
         background:linear-gradient(180deg,#f4b400,#B08200);
 
@@ -551,7 +548,7 @@ body {
 
         box-shadow:0 10px 25px rgba(0,0,0,0.25);
 
-        z-index:2500;
+        
     }
 
     /* MENU ACTIVO */
@@ -609,3 +606,82 @@ body {
     }
 }
 
+
+
+
+
+/* ========================= */
+/* BANNER PROFESIONAL */
+/* ========================= */
+
+.banner-section {
+    margin-top: 80px; /* header fijo */
+}
+
+.banner-image {
+    position: relative;
+    width: 100%;
+    height: 90vh;
+    overflow: hidden;
+}
+
+.banner-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+/* CAPA OSCURA */
+.banner-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        120deg,
+        rgba(0,0,0,0.7),
+        rgba(0,0,0,0.3)
+    );
+}
+
+/* CONTENIDO */
+.banner-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: white;
+    z-index: 2;
+    padding: 0 20px;
+}
+
+.banner-content h1 {
+    font-size: 3.5em;
+    margin-bottom: 10px;
+    font-family: 'Montserrat', cursive;
+    background: linear-gradient(50deg, #FFD700, #FFF2A8);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+
+.banner-content p {
+    font-size: 1.2em;
+    letter-spacing: 1px;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+
+    .banner-image {
+        height: 50vh;
+    }
+
+    .banner-content h1 {
+        font-size: 2.2em;
+    }
+
+    .banner-content p {
+        font-size: 1em;
+    }
+}
